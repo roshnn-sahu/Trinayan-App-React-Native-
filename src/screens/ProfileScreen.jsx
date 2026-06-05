@@ -10,7 +10,7 @@ import {
   Info,
   ChevronRight,
   LogOut,
-} from 'lucide-react-native';
+} from 'react-native';
 import { Avatar } from '../components/ui/avatar';
 import { Card } from '../components/ui/card';
 import { Button } from '../components/ui/button';
@@ -62,13 +62,22 @@ const menuItems = [
 
 export default function ProfileScreen() {
   return (
-    <ScrollView className="flex-1 bg-gray-50/50" showsVerticalScrollIndicator={false}>
+    <ScrollView
+      className="flex-1 bg-gray-50/50"
+      showsVerticalScrollIndicator={false}
+    >
       {/* Profile Header */}
       <View className="bg-white px-5 py-6 items-center border-b border-gray-100">
         <Avatar fallbackText="JD" size="lg" className="mb-3.5" />
-        <Text className="text-xl font-bold text-gray-900 tracking-tight">John Doe</Text>
-        <Text className="text-sm text-gray-500 mt-0.5 font-medium">john.doe@email.com</Text>
-        <Text className="text-xs text-gray-400 mt-1 font-semibold">+91 98765 43210</Text>
+        <Text className="text-xl font-bold text-gray-900 tracking-tight">
+          John Doe
+        </Text>
+        <Text className="text-sm text-gray-500 mt-0.5 font-medium">
+          john.doe@email.com
+        </Text>
+        <Text className="text-xs text-gray-400 mt-1 font-semibold">
+          +91 98765 43210
+        </Text>
 
         <Button variant="outline" size="sm" className="mt-4" onPress={() => {}}>
           Edit Profile
@@ -79,15 +88,21 @@ export default function ProfileScreen() {
       <Card className="mx-5 mt-5 p-0 flex-row overflow-hidden">
         <View className="flex-1 items-center py-4.5 border-r border-gray-50">
           <Text className="text-lg font-bold text-gray-900">24</Text>
-          <Text className="text-xs font-semibold text-gray-500 mt-1">Orders</Text>
+          <Text className="text-xs font-semibold text-gray-500 mt-1">
+            Orders
+          </Text>
         </View>
         <View className="flex-1 items-center py-4.5 border-r border-gray-50">
           <Text className="text-lg font-bold text-gray-900">3</Text>
-          <Text className="text-xs font-semibold text-gray-500 mt-1">Wishlist</Text>
+          <Text className="text-xs font-semibold text-gray-500 mt-1">
+            Wishlist
+          </Text>
         </View>
         <View className="flex-1 items-center py-4.5">
           <Text className="text-lg font-bold text-gray-900">2</Text>
-          <Text className="text-xs font-semibold text-gray-500 mt-1">Reviews</Text>
+          <Text className="text-xs font-semibold text-gray-500 mt-1">
+            Reviews
+          </Text>
         </View>
       </Card>
 
@@ -104,7 +119,8 @@ export default function ProfileScreen() {
                 key={item.id}
                 className={`flex-row items-center px-4.5 py-4 ${
                   index < menuItems.length - 1 ? 'border-b border-gray-50' : ''
-                } active:bg-gray-50`}>
+                } active:bg-gray-50`}
+              >
                 <View className="w-9 h-9 bg-gray-50 border border-gray-100 rounded-2xl items-center justify-center mr-3.5">
                   <IconComponent size={16} color="#4b5563" strokeWidth={2} />
                 </View>
@@ -128,7 +144,8 @@ export default function ProfileScreen() {
         <Button
           variant="destructive"
           className="rounded-2xl flex-row items-center justify-center gap-2"
-          onPress={() => {}}>
+          onPress={() => {}}
+        >
           <LogOut size={16} color="#ffffff" strokeWidth={2.2} />
           <Text className="text-white font-bold text-sm">Log Out</Text>
         </Button>

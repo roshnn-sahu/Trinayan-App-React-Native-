@@ -12,7 +12,7 @@ import {
   FileText,
   LogOut,
   ChevronRight,
-} from 'lucide-react-native';
+} from 'react-native';
 import { Avatar } from './ui/avatar';
 
 const menuItems = [

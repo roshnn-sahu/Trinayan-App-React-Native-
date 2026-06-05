@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useNavigation } from '@react-navigation/native';
-import { Home, ShoppingCart, Package, User } from 'lucide-react-native';
+import { Home, ShoppingCart, Package, User } from 'react-native';
 import HomeScreen from '../screens/HomeScreen';
 import CartScreen from '../screens/CartScreen';
 import OrdersScreen from '../screens/OrdersScreen';
@@ -43,20 +43,28 @@ export default function TabLayout() {
             fontWeight: '600',
             marginTop: 4,
           },
-        }}>
+        }}
+      >
         <Tab.Screen
           name="HomeTab"
           component={HomeScreen}
           options={{
             tabBarLabel: ({ focused }) => (
               <Text
-                className={`text-[11px] font-bold ${focused ? 'text-primary-600' : 'text-gray-400'}`}>
+                className={`text-[11px] font-bold ${
+                  focused ? 'text-primary-600' : 'text-gray-400'
+                }`}
+              >
                 Home
               </Text>
             ),
             tabBarIcon: ({ focused }) => (
               <View className="items-center justify-center relative">
-                <Home size={20} color={focused ? '#0284c7' : '#9ca3af'} strokeWidth={focused ? 2.2 : 1.8} />
+                <Home
+                  size={20}
+                  color={focused ? '#0284c7' : '#9ca3af'}
+                  strokeWidth={focused ? 2.2 : 1.8}
+                />
                 {focused && (
                   <View className="absolute -top-3 w-1.5 h-1.5 bg-primary-600 rounded-full" />
                 )}
@@ -70,13 +78,20 @@ export default function TabLayout() {
           options={{
             tabBarLabel: ({ focused }) => (
               <Text
-                className={`text-[11px] font-bold ${focused ? 'text-primary-600' : 'text-gray-400'}`}>
+                className={`text-[11px] font-bold ${
+                  focused ? 'text-primary-600' : 'text-gray-400'
+                }`}
+              >
                 Cart
               </Text>
             ),
             tabBarIcon: ({ focused }) => (
               <View className="items-center justify-center relative">
-                <ShoppingCart size={20} color={focused ? '#0284c7' : '#9ca3af'} strokeWidth={focused ? 2.2 : 1.8} />
+                <ShoppingCart
+                  size={20}
+                  color={focused ? '#0284c7' : '#9ca3af'}
+                  strokeWidth={focused ? 2.2 : 1.8}
+                />
                 {focused && (
                   <View className="absolute -top-3 w-1.5 h-1.5 bg-primary-600 rounded-full" />
                 )}
@@ -103,13 +118,20 @@ export default function TabLayout() {
           options={{
             tabBarLabel: ({ focused }) => (
               <Text
-                className={`text-[11px] font-bold ${focused ? 'text-primary-600' : 'text-gray-400'}`}>
+                className={`text-[11px] font-bold ${
+                  focused ? 'text-primary-600' : 'text-gray-400'
+                }`}
+              >
                 Orders
               </Text>
             ),
             tabBarIcon: ({ focused }) => (
               <View className="items-center justify-center relative">
-                <Package size={20} color={focused ? '#0284c7' : '#9ca3af'} strokeWidth={focused ? 2.2 : 1.8} />
+                <Package
+                  size={20}
+                  color={focused ? '#0284c7' : '#9ca3af'}
+                  strokeWidth={focused ? 2.2 : 1.8}
+                />
                 {focused && (
                   <View className="absolute -top-3 w-1.5 h-1.5 bg-primary-600 rounded-full" />
                 )}
@@ -123,13 +145,20 @@ export default function TabLayout() {
           options={{
             tabBarLabel: ({ focused }) => (
               <Text
-                className={`text-[11px] font-bold ${focused ? 'text-primary-600' : 'text-gray-400'}`}>
+                className={`text-[11px] font-bold ${
+                  focused ? 'text-primary-600' : 'text-gray-400'
+                }`}
+              >
                 Profile
               </Text>
             ),
             tabBarIcon: ({ focused }) => (
               <View className="items-center justify-center relative">
-                <User size={20} color={focused ? '#0284c7' : '#9ca3af'} strokeWidth={focused ? 2.2 : 1.8} />
+                <User
+                  size={20}
+                  color={focused ? '#0284c7' : '#9ca3af'}
+                  strokeWidth={focused ? 2.2 : 1.8}
+                />
                 {focused && (
                   <View className="absolute -top-3 w-1.5 h-1.5 bg-primary-600 rounded-full" />
                 )}

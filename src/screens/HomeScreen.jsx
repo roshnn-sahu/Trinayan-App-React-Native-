@@ -8,7 +8,7 @@ import {
   Package,
   ArrowRight,
   ChevronRight,
-} from 'lucide-react-native';
+} from 'react-native';
 import { Card, CardContent } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 
@@ -55,7 +55,10 @@ const recentOrders = [
 
 export default function HomeScreen() {
   return (
-    <ScrollView className="flex-1 bg-gray-50/50" showsVerticalScrollIndicator={false}>
+    <ScrollView
+      className="flex-1 bg-gray-50/50"
+      showsVerticalScrollIndicator={false}
+    >
       {/* Welcome Section */}
       <View className="px-5 pt-6 pb-4">
         <Text className="text-2xl font-bold text-gray-900 tracking-tight">
@@ -72,14 +75,21 @@ export default function HomeScreen() {
           Core Services
         </Text>
         <View className="flex-row flex-wrap justify-between">
-          {features.map((feature) => {
+          {features.map(feature => {
             const IconComponent = feature.icon;
             return (
               <TouchableOpacity
                 key={feature.id}
-                className={`w-[48%] bg-white border border-gray-100 rounded-3xl p-4 mb-3 shadow-sm active:bg-gray-50`}>
-                <View className={`w-10 h-10 ${feature.bgColor} rounded-2xl items-center justify-center mb-3`}>
-                  <IconComponent size={20} className={feature.color} strokeWidth={2} />
+                className={`w-[48%] bg-white border border-gray-100 rounded-3xl p-4 mb-3 shadow-sm active:bg-gray-50`}
+              >
+                <View
+                  className={`w-10 h-10 ${feature.bgColor} rounded-2xl items-center justify-center mb-3`}
+                >
+                  <IconComponent
+                    size={20}
+                    className={feature.color}
+                    strokeWidth={2}
+                  />
                 </View>
                 <Text className="text-sm font-bold text-gray-900 leading-tight">
                   {feature.title}
@@ -100,9 +110,7 @@ export default function HomeScreen() {
             Recent Orders
           </Text>
           <TouchableOpacity className="flex-row items-center gap-1 active:opacity-75">
-            <Text className="text-primary-600 text-xs font-bold">
-              View All
-            </Text>
+            <Text className="text-primary-600 text-xs font-bold">View All</Text>
             <ArrowRight size={12} color="#0284c7" strokeWidth={2.5} />
           </TouchableOpacity>
         </View>
@@ -113,7 +121,8 @@ export default function HomeScreen() {
               key={order.id}
               className={`flex-row justify-between items-center px-5 py-4 ${
                 index < recentOrders.length - 1 ? 'border-b border-gray-50' : ''
-              } active:bg-gray-50`}>
+              } active:bg-gray-50`}
+            >
               <View className="flex-row items-center">
                 <View className="w-10 h-10 bg-primary-50 rounded-2xl items-center justify-center mr-3.5">
                   <Package size={18} color="#0284c7" strokeWidth={2} />
@@ -127,9 +136,10 @@ export default function HomeScreen() {
                       order.status === 'Delivered'
                         ? 'text-green-600'
                         : order.status === 'In Transit'
-                          ? 'text-amber-600'
-                          : 'text-blue-600'
-                    }`}>
+                        ? 'text-amber-600'
+                        : 'text-blue-600'
+                    }`}
+                  >
                     {order.status}
                   </Text>
                 </View>
@@ -154,7 +164,11 @@ export default function HomeScreen() {
           <Button className="flex-1 rounded-2xl shadow-sm" onPress={() => {}}>
             New Order
           </Button>
-          <Button variant="outline" className="flex-1 rounded-2xl shadow-sm" onPress={() => {}}>
+          <Button
+            variant="outline"
+            className="flex-1 rounded-2xl shadow-sm"
+            onPress={() => {}}
+          >
             Track Order
           </Button>
         </View>

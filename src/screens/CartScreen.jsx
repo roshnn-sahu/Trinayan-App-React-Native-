@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
-import { Plus, Minus, Trash2, ShoppingBag, ChevronRight } from 'lucide-react-native';
+import { Plus, Minus, Trash2, ShoppingBag, ChevronRight } from 'react-native';
 import { Card } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 
