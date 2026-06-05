@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
-import { Plus, Minus, Trash2, ShoppingBag, ChevronRight } from 'react-native';
+import {
+  Plus,
+  Minus,
+  Trash2,
+  ShoppingBag,
+  ChevronRight,
+} from 'lucide-react-native';
 import { Card } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 
@@ -32,8 +38,8 @@ export default function CartScreen() {
   const [cartItems, setCartItems] = useState(initialCartItems);
 
   const updateQuantity = (id, delta) => {
-    setCartItems((prev) =>
-      prev.map((item) =>
+    setCartItems(prev =>
+      prev.map(item =>
         item.id === id
           ? { ...item, quantity: Math.max(1, item.quantity + delta) }
           : item,
@@ -41,8 +47,8 @@ export default function CartScreen() {
     );
   };
 
-  const removeItem = (id) => {
-    setCartItems((prev) => prev.filter((item) => item.id !== id));
+  const removeItem = id => {
+    setCartItems(prev => prev.filter(item => item.id !== id));
   };
 
   const subtotal = cartItems.reduce((sum, item) => {
@@ -74,12 +80,15 @@ export default function CartScreen() {
 
   return (
     <View className="flex-1 bg-gray-50/50">
-      <ScrollView className="flex-1 px-5 pt-4" showsVerticalScrollIndicator={false}>
+      <ScrollView
+        className="flex-1 px-5 pt-4"
+        showsVerticalScrollIndicator={false}
+      >
         <Text className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3.5">
           Cart ({cartItems.length} items)
         </Text>
 
-        {cartItems.map((item) => (
+        {cartItems.map(item => (
           <Card key={item.id} className="p-4 mb-3.5 flex-row items-center">
             <View className="w-14 h-14 bg-gray-50 border border-gray-100 rounded-2xl items-center justify-center mr-3.5">
               <Text className="text-2xl">{item.image}</Text>
@@ -97,7 +106,8 @@ export default function CartScreen() {
             <View className="flex-row items-center bg-gray-50 border border-gray-100 rounded-2xl p-1">
               <TouchableOpacity
                 onPress={() => updateQuantity(item.id, -1)}
-                className="w-7 h-7 bg-white border border-gray-100 rounded-xl items-center justify-center active:bg-gray-50">
+                className="w-7 h-7 bg-white border border-gray-100 rounded-xl items-center justify-center active:bg-gray-50"
+              >
                 <Minus size={12} color="#4b5563" strokeWidth={2.5} />
               </TouchableOpacity>
               <Text className="mx-2.5 text-xs font-bold text-gray-900 w-5 text-center">
@@ -105,7 +115,8 @@ export default function CartScreen() {
               </Text>
               <TouchableOpacity
                 onPress={() => updateQuantity(item.id, 1)}
-                className="w-7 h-7 bg-white border border-gray-100 rounded-xl items-center justify-center active:bg-gray-50">
+                className="w-7 h-7 bg-white border border-gray-100 rounded-xl items-center justify-center active:bg-gray-50"
+              >
                 <Plus size={12} color="#4b5563" strokeWidth={2.5} />
               </TouchableOpacity>
             </View>
@@ -113,7 +124,8 @@ export default function CartScreen() {
             {/* Remove item */}
             <TouchableOpacity
               onPress={() => removeItem(item.id)}
-              className="ml-3.5 p-2 bg-red-50 border border-red-100 rounded-2xl active:bg-red-100">
+              className="ml-3.5 p-2 bg-red-50 border border-red-100 rounded-2xl active:bg-red-100"
+            >
               <Trash2 size={15} color="#dc2626" strokeWidth={2} />
             </TouchableOpacity>
           </Card>
@@ -125,11 +137,17 @@ export default function CartScreen() {
       <View className="bg-white border-t border-gray-100 rounded-t-[32px] px-5 pt-5 pb-8 shadow-lg">
         <View className="flex-row justify-between mb-2 px-1">
           <Text className="text-sm text-gray-500 font-medium">Subtotal</Text>
-          <Text className="text-sm text-gray-900 font-bold">₹{subtotal.toLocaleString()}</Text>
+          <Text className="text-sm text-gray-900 font-bold">
+            ₹{subtotal.toLocaleString()}
+          </Text>
         </View>
         <View className="flex-row justify-between mb-3 px-1">
-          <Text className="text-sm text-gray-500 font-medium">Delivery Fee</Text>
-          <Text className="text-sm text-gray-900 font-bold">₹{deliveryFee}</Text>
+          <Text className="text-sm text-gray-500 font-medium">
+            Delivery Fee
+          </Text>
+          <Text className="text-sm text-gray-900 font-bold">
+            ₹{deliveryFee}
+          </Text>
         </View>
         <View className="h-px bg-gray-100 mb-3.5" />
         <View className="flex-row justify-between mb-4.5 px-1">

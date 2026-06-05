@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Menu } from 'react-native';
+import { Menu } from 'lucide-react-native';
 import { Avatar } from './ui/avatar';
 
 const Header = ({ onMenuPress, onProfilePress }) => {

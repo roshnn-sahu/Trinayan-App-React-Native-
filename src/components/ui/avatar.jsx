@@ -1,7 +1,12 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image } from 'lucide-react-native';
 
-export function Avatar({ source, fallbackText = 'JD', size = 'md', className = '' }) {
+export function Avatar({
+  source,
+  fallbackText = 'JD',
+  size = 'md',
+  className = '',
+}) {
   let sizeClass = 'w-10 h-10';
   let textClass = 'text-sm font-bold';
 
@@ -15,7 +20,8 @@ export function Avatar({ source, fallbackText = 'JD', size = 'md', className = '
 
   return (
     <View
-      className={`bg-primary-100 rounded-full items-center justify-center border-2 border-primary-200 overflow-hidden ${sizeClass} ${className}`}>
+      className={`bg-primary-100 rounded-full items-center justify-center border-2 border-primary-200 overflow-hidden ${sizeClass} ${className}`}
+    >
       {source ? (
         <Image source={source} className="w-full h-full object-cover" />
       ) : (

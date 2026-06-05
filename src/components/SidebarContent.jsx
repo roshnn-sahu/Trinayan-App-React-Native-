@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity } from 'lucide-react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { DrawerContentScrollView } from '@react-navigation/drawer';
 import {
@@ -12,7 +12,7 @@ import {
   FileText,
   LogOut,
   ChevronRight,
-} from 'react-native';
+} from 'lucide-react-native';
 import { Avatar } from './ui/avatar';
 
 const menuItems = [
@@ -36,12 +36,21 @@ export default function SidebarContent(props) {
       {/* User Profile Section */}
       <View
         className="bg-primary-600 px-5 pb-6 border-b border-primary-700"
-        style={{ paddingTop: insets.top + 16 }}>
+        style={{ paddingTop: insets.top + 16 }}
+      >
         <View className="flex-row items-center mb-4">
-          <Avatar fallbackText="JD" size="lg" className="mr-3 border-white/20 bg-white/10" />
+          <Avatar
+            fallbackText="JD"
+            size="lg"
+            className="mr-3 border-white/20 bg-white/10"
+          />
           <View className="flex-1">
-            <Text className="text-lg font-bold text-white tracking-tight">John Doe</Text>
-            <Text className="text-sm text-white/80 mt-0.5">john.doe@email.com</Text>
+            <Text className="text-lg font-bold text-white tracking-tight">
+              John Doe
+            </Text>
+            <Text className="text-sm text-white/80 mt-0.5">
+              john.doe@email.com
+            </Text>
           </View>
         </View>
         <View className="flex-row gap-2.5">
@@ -55,13 +64,18 @@ export default function SidebarContent(props) {
       </View>
 
       {/* Main Menu */}
-      <DrawerContentScrollView {...props} className="flex-1" style={{ paddingHorizontal: 0 }}>
+      <DrawerContentScrollView
+        {...props}
+        className="flex-1"
+        style={{ paddingHorizontal: 0 }}
+      >
         <View className="px-2">
           <Text className="text-[10px] font-bold text-gray-400 uppercase px-4 mb-2.5 mt-2 tracking-wider">
             Main Menu
           </Text>
-          {menuItems.map((item) => {
-            const isActive = props.state.routes[props.state.index]?.name === item.route;
+          {menuItems.map(item => {
+            const isActive =
+              props.state.routes[props.state.index]?.name === item.route;
             const Icon = item.icon;
             return (
               <TouchableOpacity
@@ -72,12 +86,19 @@ export default function SidebarContent(props) {
                 }}
                 className={`flex-row items-center px-4 py-3 mx-2 rounded-2xl mb-1 ${
                   isActive ? 'bg-primary-50' : 'active:bg-gray-50'
-                }`}>
-                <Icon size={18} color={isActive ? '#0284c7' : '#4b5563'} strokeWidth={isActive ? 2.2 : 1.8} className="mr-3" />
+                }`}
+              >
+                <Icon
+                  size={18}
+                  color={isActive ? '#0284c7' : '#4b5563'}
+                  strokeWidth={isActive ? 2.2 : 1.8}
+                  className="mr-3"
+                />
                 <Text
                   className={`text-sm font-semibold ${
                     isActive ? 'text-primary-700' : 'text-gray-700'
-                  }`}>
+                  }`}
+                >
                   {item.label}
                 </Text>
                 {isActive ? (
@@ -97,13 +118,19 @@ export default function SidebarContent(props) {
           <Text className="text-[10px] font-bold text-gray-400 uppercase px-4 mb-2.5 tracking-wider">
             More
           </Text>
-          {secondaryMenuItems.map((item) => {
+          {secondaryMenuItems.map(item => {
             const Icon = item.icon;
             return (
               <TouchableOpacity
                 key={item.label}
-                className="flex-row items-center px-4 py-3 mx-2 rounded-2xl mb-1 active:bg-gray-50">
-                <Icon size={18} color="#4b5563" strokeWidth={1.8} className="mr-3" />
+                className="flex-row items-center px-4 py-3 mx-2 rounded-2xl mb-1 active:bg-gray-50"
+              >
+                <Icon
+                  size={18}
+                  color="#4b5563"
+                  strokeWidth={1.8}
+                  className="mr-3"
+                />
                 <Text className="text-sm font-semibold text-gray-700">
                   {item.label}
                 </Text>

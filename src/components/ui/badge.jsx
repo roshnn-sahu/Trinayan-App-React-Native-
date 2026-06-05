@@ -1,8 +1,14 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text } from 'lucide-react-native';
 
-export function Badge({ children, variant = 'default', className = '', textClassName = '' }) {
-  let containerClass = 'px-2.5 py-0.5 rounded-full items-center justify-center ';
+export function Badge({
+  children,
+  variant = 'default',
+  className = '',
+  textClassName = '',
+}) {
+  let containerClass =
+    'px-2.5 py-0.5 rounded-full items-center justify-center ';
   let textClass = 'text-xs font-semibold ';
 
   switch (variant) {

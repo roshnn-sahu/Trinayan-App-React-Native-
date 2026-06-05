@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
-import { Package, Calendar, ChevronRight } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity } from 'lucide-react-native';
+import { Package, Calendar, ChevronRight } from 'lucide-react-native';
 import { Card } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
 
@@ -59,9 +59,10 @@ const filters = ['All', 'Processing', 'In Transit', 'Delivered', 'Cancelled'];
 export default function OrdersScreen() {
   const [activeFilter, setActiveFilter] = useState('All');
 
-  const filteredOrders = activeFilter === 'All' 
-    ? orders 
-    : orders.filter(o => o.status === activeFilter);
+  const filteredOrders =
+    activeFilter === 'All'
+      ? orders
+      : orders.filter(o => o.status === activeFilter);
 
   return (
     <View className="flex-1 bg-gray-50/50">
@@ -71,8 +72,9 @@ export default function OrdersScreen() {
           horizontal
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={{ paddingHorizontal: 20 }}
-          className="flex-row">
-          {filters.map((filter) => {
+          className="flex-row"
+        >
+          {filters.map(filter => {
             const isSelected = activeFilter === filter;
             return (
               <TouchableOpacity
@@ -82,11 +84,13 @@ export default function OrdersScreen() {
                   isSelected
                     ? 'bg-primary-600 border-primary-600'
                     : 'bg-white border-gray-150 active:bg-gray-50'
-                }`}>
+                }`}
+              >
                 <Text
                   className={`text-xs font-bold ${
                     isSelected ? 'text-white' : 'text-gray-600'
-                  }`}>
+                  }`}
+                >
                   {filter}
                 </Text>
               </TouchableOpacity>
@@ -101,12 +105,10 @@ export default function OrdersScreen() {
           Your Orders ({filteredOrders.length})
         </Text>
 
-        {filteredOrders.map((order) => {
+        {filteredOrders.map(order => {
           const badgeVariant = statusBadgeVariants[order.status];
           return (
-            <Card
-              key={order.id}
-              className="p-4 mb-3.5 active:bg-gray-50/50">
+            <Card key={order.id} className="p-4 mb-3.5 active:bg-gray-50/50">
               <TouchableOpacity className="flex-col">
                 <View className="flex-row justify-between items-start mb-3">
                   <View className="flex-1 mr-2">
@@ -132,9 +134,7 @@ export default function OrdersScreen() {
                 </View>
                 <View className="h-px bg-gray-50 mb-3" />
                 <View className="flex-row justify-between items-center">
-                  <Badge variant={badgeVariant}>
-                    {order.status}
-                  </Badge>
+                  <Badge variant={badgeVariant}>{order.status}</Badge>
                   <View className="flex-row items-center gap-1">
                     <Text className="text-xs font-semibold text-gray-500">
                       {order.items} item{order.items > 1 ? 's' : ''}

@@ -1,5 +1,10 @@
 import React from 'react';
-import { TouchableOpacity, Text, View, ActivityIndicator } from 'react-native';
+import {
+  TouchableOpacity,
+  Text,
+  View,
+  ActivityIndicator,
+} from 'lucide-react-native';
 
 export function Button({
   onPress,
@@ -12,7 +17,8 @@ export function Button({
   disabled = false,
 }) {
   // Base classes for container
-  let containerClass = 'flex-row items-center justify-center rounded-2xl transition-colors ';
+  let containerClass =
+    'flex-row items-center justify-center rounded-2xl transition-colors ';
 
   // Variant classes
   switch (variant) {
@@ -76,16 +82,23 @@ export function Button({
     <TouchableOpacity
       onPress={onPress}
       disabled={disabled || loading}
-      className={`${containerClass} ${className}`}>
+      className={`${containerClass} ${className}`}
+    >
       {loading ? (
         <ActivityIndicator
           size="small"
-          color={variant === 'default' || variant === 'destructive' ? '#ffffff' : '#4b5563'}
+          color={
+            variant === 'default' || variant === 'destructive'
+              ? '#ffffff'
+              : '#4b5563'
+          }
           className="mr-2"
         />
       ) : null}
       {typeof children === 'string' ? (
-        <Text className={`${defaultTextClass} ${textClassName}`}>{children}</Text>
+        <Text className={`${defaultTextClass} ${textClassName}`}>
+          {children}
+        </Text>
       ) : (
         children
       )}

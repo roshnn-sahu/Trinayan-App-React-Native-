@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity } from 'lucide-react-native';
 import {
   User,
   MapPin,
@@ -10,7 +10,7 @@ import {
   Info,
   ChevronRight,
   LogOut,
-} from 'react-native';
+} from 'lucide-react-native';
 import { Avatar } from '../components/ui/avatar';
 import { Card } from '../components/ui/card';
 import { Button } from '../components/ui/button';

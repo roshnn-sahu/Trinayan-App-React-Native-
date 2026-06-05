@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity } from 'lucide-react-native';
 import {
   TrendingUp,
   Zap,
@@ -8,7 +8,7 @@ import {
   Package,
   ArrowRight,
   ChevronRight,
-} from 'react-native';
+} from 'lucide-react-native';
 import { Card, CardContent } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 
