@@ -35,6 +35,7 @@ const initialCartItems = [
 ];
 
 export default function CartScreen() {
+  
   const [cartItems, setCartItems] = useState(initialCartItems);
 
   const updateQuantity = (id, delta) => {
@@ -156,7 +157,11 @@ export default function CartScreen() {
             ₹{total.toLocaleString()}
           </Text>
         </View>
-        <Button className="rounded-2xl" onPress={() => {}}>
+        <Button
+          v
+          className="rounded-2xl mt-3"
+          onPress={() => {}}
+        >
           Proceed to Checkout
         </Button>
       </View>

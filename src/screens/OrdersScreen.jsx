@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, ScrollView, TouchableOpacity } from 'lucide-react-native';
+import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import { Package, Calendar, ChevronRight } from 'lucide-react-native';
 import { Card } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';

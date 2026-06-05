@@ -81,7 +81,7 @@ export default function SidebarContent(props) {
               <TouchableOpacity
                 key={item.label}
                 onPress={() => {
-                  props.navigation.navigate(item.route);
+                  props.navigation.navigate('Main', { screen: item.route });
                   props.navigation.closeDrawer();
                 }}
                 className={`flex-row items-center px-4 py-3 mx-2 rounded-2xl mb-1 ${
@@ -92,10 +92,10 @@ export default function SidebarContent(props) {
                   size={18}
                   color={isActive ? '#0284c7' : '#4b5563'}
                   strokeWidth={isActive ? 2.2 : 1.8}
-                  className="mr-3"
+                  className="mr-3 backdrop:"
                 />
                 <Text
-                  className={`text-sm font-semibold ${
+                  className={`text-sm font-semibold ml-3 ${
                     isActive ? 'text-primary-700' : 'text-gray-700'
                   }`}
                 >
@@ -131,7 +131,7 @@ export default function SidebarContent(props) {
                   strokeWidth={1.8}
                   className="mr-3"
                 />
-                <Text className="text-sm font-semibold text-gray-700">
+                <Text className="text-sm font-semibold text-gray-700 ml-2">
                   {item.label}
                 </Text>
                 <ChevronRight size={14} color="#d1d5db" className="ml-auto" />

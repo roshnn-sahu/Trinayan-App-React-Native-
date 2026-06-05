@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ScrollView, TouchableOpacity } from 'lucide-react-native';
+import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import {
   User,
   MapPin,
@@ -111,7 +111,7 @@ export default function ProfileScreen() {
         <Text className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3.5">
           Settings
         </Text>
-        <Card className="p-0">
+        <Card className="px-3 py-2">
           {menuItems.map((item, index) => {
             const IconComponent = item.icon;
             return (
@@ -122,7 +122,11 @@ export default function ProfileScreen() {
                 } active:bg-gray-50`}
               >
                 <View className="w-9 h-9 bg-gray-50 border border-gray-100 rounded-2xl items-center justify-center mr-3.5">
-                  <IconComponent size={16} color="#4b5563" strokeWidth={2} />
+  {IconComponent ? (
+        <IconComponent size={16} color="#4b5563" strokeWidth={2} />
+      ) : (
+        <Text className="text-sm text-gray-400">?</Text>
+      )}
                 </View>
                 <View className="flex-1">
                   <Text className="text-sm font-bold text-gray-900 leading-tight">
