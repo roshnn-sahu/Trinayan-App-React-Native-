@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  TouchableOpacity,
-  Text,
-  View,
-  ActivityIndicator,
-} from 'lucide-react-native';
+import { TouchableOpacity, Text, View, ActivityIndicator } from 'react-native';
 
 export function Button({
   onPress,
